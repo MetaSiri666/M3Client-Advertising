@@ -1,0 +1,7 @@
+interface:
+  display_name: "M3Client-Advertising"
+  short_description: "引导广告客户访谈并生成 Brief、三案脚本和 Hero Shots"
+  default_prompt: "使用 $m3client-advertising 采访我，并生成客户 Brief、三个脚本方向和每案 Hero Shots。"
+
+policy:
+  allow_implicit_invocation: true
