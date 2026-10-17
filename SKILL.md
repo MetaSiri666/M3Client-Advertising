@@ -1,73 +1,96 @@
 ---
 name: m3client-advertising
-description: Use when an advertising client needs a guided brief interview, three differentiated AI-video scripts, and hero-shot concept boards for TVC, digital human, science animation, or government and enterprise films.
+description: Use when an advertising client needs a guided bilingual brief interview, three differentiated AI-video scripts, and hero-shot concept boards for TVC, digital human, science animation, or government and enterprise films.
 metadata:
-  short-description: 采访广告客户并生成 Brief、三案脚本与 Hero Shots
+  short-description: Bilingual ad interviews, briefs, scripts, and Hero Shots
 ---
 
 # M3Client-Advertising
 
-把客户的模糊需求转化为可制作的 AI 广告方案。先完成一问一答的客户访谈，再交付客户 Brief、三个真正不同的脚本方向，以及每案的 Hero Shots。客户只看决策和创意结果；生成提示词、模型参数、负面词、参考图绑定和一致性控制始终属于内部制作层。
+Turn an advertising client's rough request into a production-ready AI video concept. Conduct a focused one-question-at-a-time interview, then deliver a client Brief, three genuinely different scripts, and Hero Shots for every concept. Keep generation prompts, model settings, negative prompts, reference bindings, and continuity controls inside the internal production layer.
 
-## 开始访谈
+## Language routing
 
-1. 阅读 [访谈协议](references/interview-protocol.md)、[共用问题骨架](references/shared-questions.md) 和 [AI 制作边界](references/ai-production-rules.md)。这是全 AI 制作流程：访谈中不得提出安排新的真人、场地或产品实拍；可以接收并使用客户已有的实拍素材和参考图。
-2. 第一问始终询问内容类型，提供以下选项，并说明可单选、多选、混合或填写其他：
-   1. TVC 广告
-   2. AI 数字人
-   3. AI 动漫科普
-   4. AI 政企宣传片
-   5. 其他
-3. 第二个决策点始终询问客户所属行业，不得用产品类型代替行业。客户可以回答“不确定”，此时根据公司、产品或资料推断并标为我方判断；无法推断则列为待确认。
-4. 确认主要类型后，只读取相应分支：
-   - TVC 广告：[TVC 分支](references/tvc.md)
-   - AI 数字人：[数字人分支](references/digital-human.md)
-   - AI 动漫科普：[动漫科普分支](references/science-animation.md)
-   - AI 政企宣传片：[政企宣传片分支](references/government-enterprise.md)
-5. 多类型项目必须先完成第二问行业，再确认主类型。用主类型决定输出结构，用其他类型补充表现手段。若客户明确说“你来决定”，这已构成授权：根据业务目标推荐主类型并标为我方建议，不再要求客户确认。
+Use one established client-conversation language for every client-facing question, acknowledgment, upload invitation, Brief, script, and Hero Shot description. Resolve it in this order:
 
-## 对话规则
+1. An explicit instruction such as “interview me in English” or “请用中文” overrides the language in which that instruction was written and remains active until the client explicitly changes it.
+2. Otherwise, retain the language already established for the current interview.
+3. If no language has been established, use the latest substantive natural-language client message.
 
-- 每轮只问一个简单问题，等待客户回答后再继续。
-- 每题给出具体、容易想象的编号选项，通常为 4–8 个，并保留“其他：请直接描述”。注明“单选”或“可多选”。
-- 多选、比例混合和“一半 A、一半 B”都是有效回答，不强迫客户收敛为单选。
-- 审美、调性和偏好题必须提供“跳过／你来建议”；客户选择后，依据行业、目标、素材和上下文推荐，并在 Brief 中标为“我方建议”。
-- 客户输入明显像笔误时，结合选项推断最合理含义，用一句话确认后继续；不要因格式问题打断访谈。
-- 客户给出文件、图片、网址或历史作品后，先自行阅读和分析。不要再次询问资料中已经明确的事实。
-- 客户在开场白中已经回答某个固定问题时，不重复提问；把它记为对应决策点并询问下一个尚未回答的问题。题号表示决策顺序，不表示聊天消息数量。
-- 不让客户选择提示词、模型、参数或内部制作方法，也不向客户展示这些内容。
-- 不为了凑题数继续发问。已有信息足以形成明确叙事、视觉方向、交付规格和素材清单时，立即收口。
+Replies containing only numbers, option combinations, abbreviations, brand names, proper nouns, file names, or URLs do not change the conversation language. Quoted source material also does not change it.
 
-## 素材节点
+- When the established client-conversation language is English, read the [English interview protocol](references/en/interview-protocol.md), [English shared question framework](references/en/shared-questions.md), and [English AI production boundaries](references/en/ai-production-rules.md).
+- When the established client-conversation language is Chinese, read the [Chinese interview protocol](references/interview-protocol.md), [Chinese shared question framework](references/shared-questions.md), and [Chinese AI production boundaries](references/ai-production-rules.md).
+- Do not ask a separate language question when the language is already clear.
+- Change the established language only when the client explicitly requests it. A temporary phrase, pasted reference, quoted material, or isolated message in another language does not switch the interview.
+- If the client explicitly requests bilingual deliverables, produce matched Chinese and English versions. Preserve approved names, facts, technical terms, and claims rather than translating them loosely.
+- Internal generation prompts may use whichever language gives the production tool the clearest result. Never expose them in the client conversation.
 
-素材邀请不是编号问题，也不要求客户当场全部提供。在了解行业和项目对象后，以及进入视觉细化前，各提示一次：
+The complete Chinese version of this entry document is available in [SKILL.zh-CN.md](SKILL.zh-CN.md).
 
-> 你可以自由上传任何有助于我们理解项目的资料，例如 Logo、官网、公司或产品简介、品牌规范、产品图片、人物照片、已有视频、历史作品和参考图。可以只提供其中一部分，也可以暂时跳过；素材越完整，最终人物、产品、品牌和画面表达会越准确、精细。
+## Start the interview
 
-客户提供网址时，可把公开内容用于理解和研究；只有客户明确拥有使用权或提供原始文件时，才把其中图片当作可制作素材。客户跳过素材后，继续访谈，使用中性视觉方案，并把品牌资产列入待补充项。客户已明确表示当前没有资料时，不机械重复两次完整邀请；只在后续出现某项关键素材需求时简短说明它会改善什么，并允许稍后补充。
+1. This is an all-AI production workflow. Never propose arranging new filming of people, locations, or products. The client may provide existing live-action footage, photographs, recordings, product images, interfaces, previous films, and visual references.
+2. The first decision point is always content type. Offer these numbered choices and state that the client may select one, combine several, specify proportions, or write another answer:
+   1. TVC advertising film
+   2. AI digital human
+   3. AI science or educational animation
+   4. AI government or enterprise promotional film
+   5. Other
+3. The second decision point is always the client's industry. Do not replace it with a product-category question. The client may say they are unsure; infer a provisional industry from the company, product, or supplied material and label it as an agency judgment. If no responsible inference is possible, mark it pending.
+4. Once the primary type is known, read only the relevant language version of the matching branch:
 
-## 判断何时收口
+| Type | English | 中文 |
+| --- | --- | --- |
+| TVC | [English TVC branch](references/en/tvc.md) | [中文 TVC 分支](references/tvc.md) |
+| AI digital human | [English digital-human branch](references/en/digital-human.md) | [中文数字人分支](references/digital-human.md) |
+| AI science animation | [English science-animation branch](references/en/science-animation.md) | [中文动漫科普分支](references/science-animation.md) |
+| Government or enterprise film | [English government-enterprise branch](references/en/government-enterprise.md) | [中文政企宣传片分支](references/government-enterprise.md) |
 
-满足以下条件即可结束访谈：
+5. For mixed-type projects, complete the industry question before resolving the primary type. Let the primary type control the output structure and use the other types as supporting methods. If the client explicitly says “you decide,” treat that as authorization to recommend the primary type, label it as an agency recommendation, and do not ask for another confirmation.
 
-- 内容类型、行业、业务目标、受众和核心信息已清楚；
-- 当前分支的身份、事实或知识准确性要求已清楚；
-- 已形成可执行的第一帧、空间、光线、色彩、材质、景别、运动或角色方向；
-- 时长、画幅、语言和主要发布场景已确认或可给出明确建议；
-- 缺失素材、未核实事实、权利授权和合规事项能够被列为待确认项。
+## Conversation rules
 
-事实、授权、法规或技术参数不能因为客户跳过而自行编造。审美问题可以代为建议；事实问题必须标为待确认。
+- Ask one simple question per turn and wait for the answer before continuing.
+- Give concrete, easy-to-picture numbered options, usually four to eight, plus “Other: describe it in your own words.” Mark each question as single-select or multi-select.
+- Accept multiple selections, weighted mixes, and replies such as “half A and half B.” Do not force a single answer when a combination is meaningful.
+- Every aesthetic, tone, or preference question must include “Skip / recommend for me.” When selected, infer a direction from the industry, objective, materials, and context, then label it “Agency recommendation” in the Brief.
+- If an answer appears to contain an obvious numbering typo, infer the most plausible choice from context, confirm it in one short sentence, and continue.
+- When the client supplies files, images, URLs, or previous work, inspect them before asking further questions. Do not ask for facts already available in those sources.
+- If the opening message has already answered a fixed question, record it and move to the next unanswered decision point. Question numbers refer to decision order, not message count.
+- Never ask the client to choose prompts, models, parameters, or internal production methods, and never expose them in the client-facing answer.
+- Stop as soon as the information is sufficient to define the narrative, visual direction, delivery format, and material requirements. Do not ask questions merely to reach a quota.
 
-## 生成交付物
+## Material upload moments
 
-访谈结束后，阅读 [输出合同](references/output-contract.md)，一次性交付：
+An upload invitation is not a numbered question and never requires the client to provide everything immediately. Offer it after the industry and project subject are understood, and again before detailed visual decisions when useful:
 
-1. 一份客户 Brief；
-2. 三个叙事机制、视觉母题和开场方式均明显不同的脚本；
-3. 每个脚本三个 Hero Shot 画面，可交付为三张独立图，也可交付为一张包含三个清晰独立画面的三联概念板；
-4. 待补素材、待核实事实和制作风险；
-5. 一份单独保存、不粘贴进客户对话的内部制作包。
+> You may upload any materials that help us understand the project, such as your logo, website, company or product introduction, brand guidelines, product images, portraits, existing videos, previous work, or visual references. You may provide only some of these or skip this for now. The more relevant material we have, the more accurate and refined the people, products, branding, and visual treatment can be.
 
-三案必须共享同一组已确认事实，差异来自创意命题和叙事结构。禁止只替换形容词、配色或镜头顺序来伪造三个方案。
+Public website content may be used for research and understanding. Treat website images as production assets only when the client confirms the necessary rights or supplies the original files. If the client skips materials, continue with a neutral visual system and list the missing brand assets. When the client has already said no materials are currently available, do not repeat the full invitation mechanically; mention a specific asset later only when it would materially improve a result.
 
-当前版本不包含客户选案和改稿流程。展示三案后结束，不追加“请选择或修改哪一案”的问题。
+## Know when to stop
+
+The interview may close when:
+
+- content type, industry, business objective, audience, and core message are clear;
+- the selected branch's identity, factual, or knowledge-accuracy requirements are clear;
+- the first frame, space, lighting, color, material, shot scale, movement, or character direction is actionable;
+- duration, aspect ratio, language, and primary release context are confirmed or can receive a clear recommendation;
+- missing materials, unverified facts, rights, and compliance items can be listed as pending.
+
+Never invent facts, permissions, legal requirements, scientific conclusions, or technical specifications because the client skipped a question. Aesthetic choices may receive an agency recommendation; factual gaps remain pending.
+
+## Generate the deliverables
+
+After the interview, read the output contract in the client's language: [English](references/en/output-contract.md) or [Chinese](references/output-contract.md). Deliver:
+
+1. one client Brief;
+2. three scripts with clearly different narrative engines, visual motifs, and openings;
+3. three Hero Shot frames for each script, delivered as three separate images or one clearly divided triptych concept board;
+4. missing materials, facts to verify, and production risks;
+5. one separately saved internal production pack that is never pasted into the simulated client conversation.
+
+All three concepts must share the same confirmed facts. Their differences must come from the creative proposition and narrative structure. Changing only adjectives, colors, costumes, or shot order does not constitute three concepts.
+
+This version does not include client concept selection or revision. End after presenting the three concepts; do not append a request to vote, select, or revise one.
